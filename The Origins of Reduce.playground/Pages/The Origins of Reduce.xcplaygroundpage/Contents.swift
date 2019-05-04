@@ -58,5 +58,6 @@ list.fold(0, +)
 let l = list.fold(0, { _, result in result + 1 })
 l
 
-dump(list.fold(List.empty, List.cons))
-dump(list.reduce1(List.empty, List.cons))
+dump( list.fold(    List.empty, List.cons ) )
+dump( list.reduce(  List.empty, List.cons ) )
+dump( list.reduce1( List.empty, List.cons ) )
