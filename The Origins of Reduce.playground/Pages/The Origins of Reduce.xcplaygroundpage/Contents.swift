@@ -35,12 +35,11 @@ extension List {
     }
     
     func reduce<Result>(_ emptyCase: Result, _ consCase: (Element, Result) -> Result) -> Result {
-        var result = emptyCase
         switch self {
         case .empty:
-            return result
-        case let .cons(x, xs):
-            return xs.reduce(consCase(x, result), consCase)
+            return emptyCase
+        case let .cons( x, xs ):
+            return xs.reduce( consCase( x, emptyCase ), consCase )
         }
     }
 
